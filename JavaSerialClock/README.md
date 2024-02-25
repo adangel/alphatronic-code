@@ -13,4 +13,4 @@ for details.
 ## JavaSerialClock2
 This program continuously sends "U" (0x55) to generate a clock at the serial port.
 
-See [Using the serial port - part 1.5 - bitbanging - followup](https://adangel.org/2023/../../serial-8251A-part-1.5-followup/).
+See [Using the serial port - part 1.5 - bitbanging - followup](https://adangel.org/2024/02/25/serial-8251A-part-1.5-followup/).
