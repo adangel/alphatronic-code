@@ -10,8 +10,8 @@ public class JavaSerialClock2 {
         SerialPort commPort = SerialPort.getCommPort("/dev/ttyUSB0");
         System.out.println("commPort = " + commPort + " (" + commPort.getSystemPortPath() + ")");
 
-        int baudrate = 2400;
-        // int baudrate = 100*2;
+        //int baudrate = 4800 * 16 * 2;
+        int baudrate = 4800 * 2;
         boolean set = commPort.setBaudRate(baudrate);
         System.out.println("set = " + set);
         commPort.setParity(SerialPort.NO_PARITY);
@@ -25,7 +25,7 @@ public class JavaSerialClock2 {
         byte[] buffer = new byte[20];
         Arrays.fill(buffer, (byte) 0x55);
         long start = System.currentTimeMillis();
-        while (System.currentTimeMillis() - start < TimeUnit.SECONDS.toMillis(10)) {
+        while (System.currentTimeMillis() - start < TimeUnit.SECONDS.toMillis(300)) {
             commPort.writeBytes(buffer, buffer.length);
         }
         System.out.println("Clock done");
